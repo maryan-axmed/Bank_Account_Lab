@@ -9,9 +9,11 @@ public class Main {
         // pass in statements according to the parameters defined when the constructor was made
         BankAccount accountTwo = new BankAccount("Amy", "Winehouse", 1976-11-24, 842948, 0);
 //ask an account holder to cash in any amount they would like and return their current balance
-        System.out.println("Hello " + accountTwo.firstName + ". The current balance of your account is " + accountTwo.deposit());
+        System.out.println("Hello " + accountTwo.getFirstName() + ". The current balance of your account is " + accountTwo.deposit());
 //ask an account holder to withdraw any amount they would like and return their current balance.
-        System.out.println("Hello " + accountTwo.firstName + ". The current balance of your account is " + accountTwo.withdrawal());
+        System.out.println("Hello " + accountTwo.getFirstName() + ". The current balance of your account is " + accountTwo.withdrawal());
 
+//the account will pay interest and the balance of the account will be updated.
+        System.out.println("Hello " + accountTwo.getFirstName() + ". Your current balance after interest is " + accountTwo.interest());
     }
 }

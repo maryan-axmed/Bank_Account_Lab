@@ -5,11 +5,11 @@ import java.util.Scanner;
 //created a class named "BankAccount" and this should have the same name as the constructor
 public class BankAccount {
     //    the following information are properties for out BankAccount class and these can be assigned with a value:
-    String firstName;
-    String lastName;
-    int dateOfBirth;
-    int accountNumber;
-    int balance;
+    private String firstName;
+    private String lastName;
+    private int dateOfBirth;
+    private int accountNumber;
+    private int balance;
 
     //    create a constructor: has the same name as the class + not return type (i.e. no void, no string etc.)
 //    define the parameters of the BankAccount constructor that that it will know what information to expect
@@ -49,27 +49,53 @@ public class BankAccount {
         return subtractAmount;
     }
 
-//      •interest method: this method will need to allow the account to pay the intrest
-//    public static void interest(){
-//
-//    }
-//
-//
-////    make getters
-//    public String getFirstName(){
-//        return this.firstName;
-//    }
-//    public String getLastName(){
-//        return this.lastName;
-//    }
-//    public LocalDate getDateOfBirth(){
-//        return this.dateOfBirth;
-//    }
-//    public int getAccountNumber(){
-//        return this.accountNumber;
-//    }
-//    public int getBalance(){
-//        return this.balance;
-//    }
-////    make setters
+//      •interest method: this method will need to allow the account to pay the interest to the account holder
+    public int interest(){
+//        i need to write something that will allow me to take the current balance and add a specific percentage of interest
+        double interestRate = 0.4;
+        this.balance = (int) (this.balance * interestRate);
+        return this.balance;
+    }
+
+// why do we need getters and setter?-
+// these are used so that we can access and modify private variables of classes
+//    getter will retrieve value of private variable and setter will set the value of the private variable
+//    make getters
+    public String getFirstName(){
+        return firstName;
+    }
+    public String getLastName(){
+        return lastName;
+    }
+    public int getDateOfBirth(){
+        return dateOfBirth;
+    }
+    public int getAccountNumber(){
+        return accountNumber;
+    }
+    public int getBalance(){
+        return balance;
+    }
+//    make setters
+
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setDateOfBirth(int dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
 }
