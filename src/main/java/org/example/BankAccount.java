@@ -21,33 +21,35 @@ public class BankAccount {
         this.lastName = inputLastName;
         this.dateOfBirth = inputDateOfBirth;
         this.accountNumber = inputAccountNumber;
-        this.balance = 0;
+        this.balance = 0; //we set the balance to 0 as every account balance will not be the same for every object
 
     }
-//    my methods:
+//my methods:
 //      •deposit method: this method needs to take an amount of money and add it to the current balance
 //                      can ask the account owner to input a number for how much they want to put in
 //                      add this to the current balance which is 0.
+
+    public int deposit() {
+        Scanner howMuch = new Scanner(System.in);
+        System.out.println("How much money would you like to deposit?: ");
+        int addAmount = howMuch.nextInt();
+        this.balance += addAmount;
+        return addAmount;
+
+    }
 //
-//    public static void deposit() { // DO I NEED TO PASS PARAMETERS INTO THE PARENTHESES?- DON'T THINK SO RN
-//        Scanner howMuch = new Scanner(System.in);
-//        System.out.println("How much money would you like to deposit?: ");
-//        int addAmount = howMuch.nextInt();
-//        System.out.println("The current balance of account " + this.accountNumber + " is " + // NOT FINISHED, NEED TO ADD THIS.BALANCE
-////                TO ADDAMOUNT VARIABLE
-//    }
-//
-////      •withdrawal method:this method needs to take an amount of money and subtract it from the current balance
-////                      can ask the account owner to input a number for how much they want to put in
-////                      add this to the current balance which is 0.
-//    public static void withdrawal(){ //DO I NEED TO PASS PARAMETERS INTO THE PARENTHESES?- DON'T THINK SO RN
-//        Scanner howMuch = new Scanner(System.in);
-//        System.out.println("How much money would you like to withdraw?: ");
-//        int subtractAmount = howMuch.nextInt();
-//        System.out.println(); //NOT FINISHED, NEED TO SUBTRACT THIS.BALANCE TO ADDAMOUNT VARIABLE
-//    }
-//
-////      •interest method: this method will need to allow the account to pay the intrest
+//      •withdrawal method:this method needs to take an amount of money and subtract it from the current balance
+//                      can ask the account owner to input a number for how much they want to put in
+//                      add this to the current balance which is 0.
+    public int withdrawal(){
+        Scanner howMuch = new Scanner(System.in);
+        System.out.println("How much money would you like to withdraw?: ");
+        int subtractAmount = howMuch.nextInt();
+        this.balance = this.balance - subtractAmount;
+        return subtractAmount;
+    }
+
+//      •interest method: this method will need to allow the account to pay the intrest
 //    public static void interest(){
 //
 //    }
@@ -70,5 +72,4 @@ public class BankAccount {
 //        return this.balance;
 //    }
 ////    make setters
-    }
 }
